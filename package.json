@@ -9,7 +9,8 @@
     "clean": "rm -rf dist",
     "bench:ts": "ts-node ./src/index.ts",
     "bench:js": "node ./dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "proto:gen": "protoc --js_out=import_style=commonjs,binary:. ./src/protobuf/benchmark.proto"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
   },
   "dependencies": {
     "@msgpack/msgpack": "^2.7.0",
-    "bson": "^4.4.0"
+    "bson": "^4.4.0",
+    "google-protobuf": "^3.17.3"
   }
 }

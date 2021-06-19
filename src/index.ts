@@ -2,6 +2,7 @@ import { input } from './input';
 import { testMsgPack } from './msgpack';
 import { testJson } from './json';
 import { testBson } from './bson';
+import * as pb from './protobuf';
 
 main(1000);
 main(1000000);
@@ -19,6 +20,7 @@ export function main(ops = 1000000) {
   batch('json   ', ops, manyOps, () => testJson(input()));
   batch('bson   ', ops, manyOps, () => testBson(input()));
   batch('msgpack', ops, manyOps, () => testMsgPack(input()));
+  batch('protobuf', ops, manyOps, () => pb.testProtobuf(pb.input()));
   console.log('');
   return 0;
 }

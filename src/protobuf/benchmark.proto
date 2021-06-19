@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package benchmark;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+
+message InputMessage {
+  repeated google.protobuf.Any a = 1; // [1, '2', true, new Date()],
+  bool b = 2;
+  int32 c = 3;
+  google.protobuf.Timestamp d = 4;
+  double e = 5;
+  float f = 6;
+  double pi = 7;
+  float r = 8;
+  string s = 9;
+  string t = 10;
+}

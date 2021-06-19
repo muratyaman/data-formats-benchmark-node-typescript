@@ -5,6 +5,8 @@ BSON: https://github.com/mongodb/js-bson
 
 MessagePack: https://github.com/msgpack/msgpack-javascript
 
+Protocol Buffers: https://www.npmjs.com/package/google-protobuf
+
 Also, check: https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats
 
 ## install
@@ -23,7 +25,7 @@ npm run build
 
 we can run many encode/decode operations for inputs like:
 
-```json
+```
 {
   a: [ 1, '2', true, 2021-06-19T15:24:01.012Z ],
   b: true,
@@ -52,18 +54,20 @@ result for 1000 operations
 
 ```
 format    time (ms)   serialized (KB)
-json             18    671.2
-bson             71    603.5
-msgpack          61    570.3
+json             17    671.1
+bson             72    603.5
+msgpack          66    570.3
+protobuf        111    530.3
 ```
 
 result for 1000000 operations
 
 ```
 format    time (s)  serialized (MB)
-json           9.55    655.4
-bson         18.616    589.4
-msgpack      13.205    556.9
+json          9.457    655.4
+bson         18.685    589.4
+msgpack      13.234    556.9
+protobuf     21.182    517.8
 ```
 
 ## Node
@@ -78,18 +82,20 @@ result for 1000 operations
 
 ```
 format    time (ms)   serialized (KB)
-json             13    671.2
-bson             84    603.5
-msgpack          66    570.3
+json             15    671.1
+bson             77	   603.5
+msgpack          71    570.2
+protobuf        116    530.3
 ```
 
 result for 1000000 operations
 
 ```
 format    time (s)  serialized (MB)
-json          9.767    655.4
-bson         18.549    589.4
-msgpack      12.952    556.9
+json           9.66    655.4
+bson          18.31    589.4
+msgpack      13.082    556.9
+protobuf      21.27    517.8
 ```
 
 ## conclusion
