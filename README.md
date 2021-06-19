@@ -83,7 +83,7 @@ result for 1000 operations
 ```
 format    time (ms)   serialized (KB)
 json             15    671.1
-bson             77	   603.5
+bson             77    603.5
 msgpack          71    570.2
 protobuf        116    530.3
 ```
