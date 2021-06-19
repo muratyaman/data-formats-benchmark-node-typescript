@@ -1,0 +1,46 @@
+{
+  "name": "data-formats-benchmark-node-typescript",
+  "version": "1.0.0",
+  "description": "benchmark of serialize/deserialize operations for data formats like JSON, BSON, MessagePack, etc.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean &&npm run build:ts",
+    "build:ts": "tsc",
+    "clean": "rm -rf dist",
+    "bench:ts": "ts-node ./src/index.ts",
+    "bench:js": "node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muratyaman/data-formats-benchmark-node-typescript.git"
+  },
+  "keywords": [
+    "data",
+    "format",
+    "serialize",
+    "deserialize",
+    "encode",
+    "decode",
+    "parse",
+    "stringify",
+    "json",
+    "bson",
+    "messagepack"
+  ],
+  "author": "Haci Murat Yaman",
+  "license": "LICENSE",
+  "bugs": {
+    "url": "https://github.com/muratyaman/data-formats-benchmark-node-typescript/issues"
+  },
+  "homepage": "https://github.com/muratyaman/data-formats-benchmark-node-typescript#readme",
+  "devDependencies": {
+    "@types/node": "^15.12.4",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "@msgpack/msgpack": "^2.7.0",
+    "bson": "^4.4.0"
+  }
+}
