@@ -1,12 +1,13 @@
 {
   "name": "data-formats-benchmark-node-typescript",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "benchmark of serialize/deserialize operations for data formats like JSON, BSON, MessagePack, etc.",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean &&npm run build:ts",
+    "build": "npm run clean && npm run build:ts && npm run copy",
     "build:ts": "tsc",
     "clean": "rm -rf dist",
+    "copy": "cp src/*.proto dist",
     "bench:ts": "ts-node ./src/index.ts",
     "bench:js": "node ./dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -43,6 +44,7 @@
   "dependencies": {
     "@msgpack/msgpack": "^2.7.0",
     "bson": "^4.4.0",
-    "google-protobuf": "^3.17.3"
+    "google-protobuf": "^3.17.3",
+    "protobufjs": "^6.11.2"
   }
 }

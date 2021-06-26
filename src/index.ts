@@ -2,7 +2,8 @@ import { input } from './input';
 import { testMsgPack } from './msgpack';
 import { testJson } from './json';
 import { testBson } from './bson';
-import * as pb from './protobuf';
+import * as gpb from './google-protobuf';
+import * as pbjs from './protobufjs';
 
 main(1000);
 main(1000000);
@@ -17,10 +18,14 @@ export function main(ops = 1000000) {
   } else {
     console.log('format   \ttime (ms) \tserialized (KB)');
   }
-  batch('json   ', ops, manyOps, () => testJson(input()));
-  batch('bson   ', ops, manyOps, () => testBson(input()));
-  batch('msgpack', ops, manyOps, () => testMsgPack(input()));
-  batch('protobuf', ops, manyOps, () => pb.testProtobuf(pb.input()));
+
+  const pbjsBench = pbjs.init();
+
+  batch('json           ', ops, manyOps, () => testJson(input()));
+  batch('bson           ', ops, manyOps, () => testBson(input()));
+  batch('msgpack        ', ops, manyOps, () => testMsgPack(input()));
+  batch('google-protobuf', ops, manyOps, () => gpb.testProtobuf(gpb.input()));
+  batch('protobufjs     ', ops, manyOps, () => pbjsBench.testProtobuf(pbjsBench.input(input())));
   console.log('');
   return 0;
 }
