@@ -27,8 +27,8 @@ npm run build
 
 we can run many encode/decode operations for inputs like:
 
-```
-{
+```js
+const rawMsg = {
   a: [ 1, '2', true, 2021-06-19T15:24:01.012Z ],
   b: true,
   c: 123456789,
@@ -38,7 +38,7 @@ we can run many encode/decode operations for inputs like:
   pi: 3.141592653589793,
   r: 0.960430998670188,
   s: 'string',
-  t: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque diam diam, dapibus tempus augue volutpat non. Morbi vehicula in mi id egestas. Ut euismod tempus elementum. Curabitur auctor mattis ipsum a dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur rhoncus erat eget consequat feugiat. Aliquam volutpat a dolor ut placerat. Curabitur ultricies, mauris ac tempus rhoncus, mauris nulla egestas mi, sit amet finibus lectus purus eget leo.'
+  t: 'Lorem ipsum ...'
 }
 ```
 
